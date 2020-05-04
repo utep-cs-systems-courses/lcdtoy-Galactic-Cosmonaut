@@ -25,16 +25,11 @@ main()
 
   while(1) {
 
-    if ((P2IN & BIT0) == 0)
-      state = 1;
-    else if ((P2IN & BIT1) == 0)
-      state = 2;
-    else if ((P2IN & BIT2) == 0)
-      state = 3;
-    else if ((P2IN & BIT3) == 0)
-      state = 4;
-    else
-      state = 0;
+    if ((P2IN & BIT0) == 0)       state = 1;
+    else if ((P2IN & BIT1) == 0)  state = 2;
+    else if ((P2IN & BIT2) == 0)  state = 3;
+    else if ((P2IN & BIT3) == 0)  state = 4;
+    else                          state = 0;
 
     switch (state) {
     case (1):
@@ -67,14 +62,6 @@ main()
       ;
     }
   }
-  /*
-  // Draw an X
-  for(k=20; k<70; k++)
-    drawPixel(k,k,COLOR_BLUE);
-  for(k=70,l=20; k>20 && l<70; k--,l++)
-    drawPixel(k,l,COLOR_BLUE);
-  drawString5x7(50, 50, "hello", COLOR_BLACK, COLOR_WHITE);
-  */
 }
 
 void drawTriangle() {
